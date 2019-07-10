@@ -8,7 +8,7 @@ state = {
   tickets: []
 }
 
-fetchTickets = () => {
+componentDidMount = () => {
   fetch('http://localhost:3000/tickets')
   .then(res => res.json())
   .then(tickets => {
@@ -26,16 +26,17 @@ deleteTicket = (ticketId) => {
   })
   .then(res => res.json())
   .then(res => console.log(res))
-  .then(() => this.fetchTickets())
+  .then(() => this.componentDidMount())
 }
+
 
 
   render(){
     return(
 
      <div className="schedule">
-     {this.state.tickets.length < 1 ? this.fetchTickets() : null}
-     <React.Fragment>{this.props.currentUser ? <h2>{this.props.currentUser.name}'s Concert Schedule</h2> : null}</React.Fragment>
+  
+     <div className="profile-header">{this.props.currentUser ? <h2>{this.props.currentUser.name}'s Concert Schedule</h2> : null}</div>
 
 
 
