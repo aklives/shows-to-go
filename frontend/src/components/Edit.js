@@ -76,7 +76,7 @@ render(){
   const bands = this.state.concerts.map(concert => concert.band)
 
   return (
-  <div>
+  <div className="edit">
     {this.props.currentUser ?
       <div>
         <h1>Welcome to Edit Mode, {this.props.currentUser.name}</h1>
@@ -87,7 +87,7 @@ render(){
                    <div>
                      <br/><span className="neon-purple">{concert.day_name.name}</span> - <span className="neon-orange"><strong>{concert.band}</strong></span> - <span className="venue-day">{concert.venue_name.name}</span>
                      {this.props.currentUser ?
-                      <Button  size='mini' basic color='violet' onClick={() => this.deleteConcert(concert.id)} type='submit'>Delete</Button>
+                      <Button  size='mini' basic color='blue' onClick={() => this.deleteConcert(concert.id)} type='submit'>Delete</Button>
                       :
                       null
                      }
@@ -137,7 +137,8 @@ render(){
         <option value="7">Saturday</option>
       </select>
     </form>
-    <Button size='mini' basic color='violet' onClick={() => this.addConcert()} type='submit'>Add Concert</Button>
+    <br/>
+    <Button size='mini' basic color='blue' onClick={() => this.addConcert()} type='submit'>Add Concert</Button>
 
   </div>
   )

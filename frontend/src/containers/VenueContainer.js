@@ -28,7 +28,7 @@ render(){
         })}
 
         {this.props.currentUser && this.props.currentUser.admin ?
-        <div className = "edit"><NavLink to="/edit">{this.props.currentUser.admin ? "admin" : "not admin"}</NavLink></div>
+        <div className = "admin"><NavLink to="/edit">{this.props.currentUser.admin ? "admin" : "not admin"}</NavLink></div>
           :
         <h1>not admin</h1>
 
