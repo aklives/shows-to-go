@@ -1,0 +1,4 @@
+/frontend/.env
+/backend/log/development.log
+/frontend/node_modules
+log

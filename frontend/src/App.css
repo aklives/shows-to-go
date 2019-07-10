@@ -1,0 +1,197 @@
+
+hr {
+  color: #ff33ff;
+}
+
+.navbar {
+  width: 100%;
+  color: #FD5F00;
+  background-color: #C7CACB;
+}
+
+.maincontainer {
+  height: 100%;
+  width: 100%;
+  background-color: #B9BDBE;
+
+}
+
+.venue-container {
+  height: inherit;
+  position: relative;
+  width: 20%;
+  background-color: #92979A;
+}
+
+.days-container {
+  height: inherit;
+  position: relative;
+  width: 80%;
+  background-color: #C7CACB;
+  display:flex;
+  justify-content:space-around;
+
+}
+
+.venues-days {
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: inherit;
+  width: inherit;
+}
+
+.venue {
+  height: 80px;
+  width: 200px;
+  background-color: #2A3439;
+  color: #66ff66;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  display:block;
+}
+
+.day {
+  display: inline-flex;
+  height: 99%;
+  width: 12%;
+  margin: 5px;
+  padding: 5px;
+  color: #FD5F00;
+  align-items: stretch;
+  background-color: #2A3439;
+
+}
+
+.welcome {
+  display: inline-flex;
+  color: #2A3439;
+}
+
+.sign-in {
+  display: inline-flex;
+}
+
+.concert-band {
+  text-align: left;
+}
+
+#root {
+  height: inherit;
+  width: inherit;
+}
+
+a {
+
+  color: #FD5F00;
+
+}
+
+.venue-day {
+  color: #66ff66
+}
+
+.edit {
+  height: 60px;
+  width: 200px;
+  background-color: #2A3439;
+  color: #FD5F00;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  display:block;
+
+}
+
+.schedule {
+  background-color: #92979A;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+}
+
+.schedule-item {
+  background-color: #2A3439;
+  color: #FD5F00;
+  height: 150px;
+  width: 200px;
+  text-align: center;
+  margin: 10px;
+  padding: 5px;
+
+}
+
+.neon-orange {
+  color: #FD5F00
+}
+
+.neon-purple{
+  color: #ff33ff;
+}
+
+.neon-green {
+  color: #66ff66
+}
+
+.venue-concerts {
+  background-color: #2A3439;
+  width: 20%;
+  height: 10%;
+  margin: 5px;
+  text-align: center;
+  display: block;
+}
+
+.about-container {
+  height: 100%;
+  width: 100%;
+  background-image: url("./unsplash.jpg");
+  background-size: cover;
+  color: #ff33ff;
+  font-size: 2em;
+  text-align:center;
+}
+
+.logout {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  color: white;
+  display: flex;
+  line-height: 100px;
+}
+
+.account-settings {
+  height: 100%;
+  width: 100%;
+  background-image: url("./unsplash.jpg");
+  background-size: cover;
+  color: #ff33ff;
+}
+
+.signup-container {
+  position: absolute;
+  top: 25px;
+  height: 100%;
+  width: 100%;
+  background-image: url("./unsplash.jpg");
+  background-size: cover;
+  color: #ff33ff;
+  z-index: 1;
+}
+
+.login-container {
+  position: absolute;
+  top: 25px;
+  height: 100%;
+  width: 100%;
+  background-image: url("./unsplash.jpg");
+  background-size: cover;
+  color: #ff33ff;
+  z-index: 1;
+
+}
