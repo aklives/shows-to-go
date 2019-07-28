@@ -16,7 +16,8 @@ wrap_parameters :user, include: [:email, :name, :password, :admin]
   def create
     @user = User.create(user_params)
     if @user.valid?
-      render json: @user, status: :created
+      token = encode_token(@user.id)
+      render json: {user: @user, token: token}
     else
     	render json: {errors: @user.errors.full_messages}
     end

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Button } from 'semantic-ui-react'
+import {Button} from 'semantic-ui-react'
 
 
 export default class Day extends React.Component {

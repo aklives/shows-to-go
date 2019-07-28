@@ -25,12 +25,12 @@ render(){
       <h1>Kingsland</h1>
       <p>{this.state.venue.address}</p>
       <br/>
-      <img src="./kingsland.jpg" height="400px" width="800px" />
+      <img src="./kingsland.jpg" height="400px" width="800px" alt="Kingsland" title="Kingsland" />
       <p>Kingsland is located in the far reaches of Greenpoint</p>
       <h1>Bands Playing:</h1>
       {this.state.venue.address ?
        this.state.venue.concerts.map(concert => {
-         return <div className="venue-concerts"><p><span className="neon-orange">{concert.band}</span>-<span className="neon-purple">{concert.day_name.name}</span></p></div>
+         return <div className="venue-concerts" key={concert.id}><p><span className="neon-orange">{concert.band}</span>-<span className="neon-purple">{concert.day_name.name}</span></p></div>
        })
 
       :

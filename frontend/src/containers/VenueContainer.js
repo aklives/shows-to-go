@@ -21,18 +21,24 @@ componentDidMount(){
 
 render(){
 
+
   return (
+
     <div className="venue-container">
         {this.state.venues.map(venue => {
           return <Venue key={venue.id} venue={venue}/>
         })}
 
-        {this.props.currentUser && this.props.currentUser.admin ?
-        <div className = "admin"><NavLink to="/edit">{this.props.currentUser.admin ? "admin" : "not admin"}</NavLink></div>
-          :
-        <h1>not admin</h1>
+        {(this.props.currentUser !== null && this.props.currentUser.admin === true) ?
 
-         }
+          <div className = "admin"><NavLink to="/edit">admin</NavLink></div>
+        :
+        null
+
+
+        }
+
+
 
     </div>
     )

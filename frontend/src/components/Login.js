@@ -39,6 +39,7 @@ class Login extends React.Component {
 				// response is the user object
 				console.log(response)
 				localStorage.setItem("token", response.token)
+        console.log(response.user)
 				this.props.setCurrentUser(response.user)
 				this.props.history.push('/')
 			}

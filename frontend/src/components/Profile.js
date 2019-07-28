@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Button } from 'semantic-ui-react'
+import {Button} from 'semantic-ui-react'
 
 
 export default class Profile extends React.Component {
@@ -35,7 +35,7 @@ deleteTicket = (ticketId) => {
     return(
 
      <div className="schedule">
-  
+
      <div className="profile-header">{this.props.currentUser ? <h2>{this.props.currentUser.name}'s Concert Schedule</h2> : null}</div>
 
 

@@ -6,5 +6,7 @@ class Concert < ApplicationRecord
 
   has_many :users, through: :tickets
 
+  validates_uniqueness_of :day_id, scope: [:venue_id, :band]
+
 
 end

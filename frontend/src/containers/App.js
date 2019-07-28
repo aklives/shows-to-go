@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
-import { Route, Switch, Redirect } from 'react-router-dom'
-import { BrowserRouter as Router } from 'react-router-dom'
+import {Route} from 'react-router-dom'
+import {BrowserRouter as Router} from 'react-router-dom'
 import Home from '../components/Home'
 import About from '../components/About'
 import Login from '../components/Login'
@@ -37,21 +37,19 @@ class App extends React.Component {
   componentWillMount(){
   		const token = localStorage.getItem("token")
   		if(token){
-  			// let's go get some user data
   			fetch("http://localhost:3000/auto_login", {
   				headers: {
   					"Authorization": token
   				}
   			})
   			.then(res => res.json())
-  			.then(response => {
-  				if (response.errors){
-  					localStorage.removeItem("user_id")
-  					alert(response.errors)
+  			.then(user => {
+  				if (user.errors){
+  					localStorage.removeItem("token")
+  					alert(user.errors)
   				} else {
-  					this.setState({
-  						currentUser: response
-  					})
+            console.log(user)
+  					this.setCurrentUser(user)
   				}
   			})
   		}
@@ -59,14 +57,16 @@ class App extends React.Component {
 
 
   render(){
-    // console.log(process.env.REACT_APP_TOKEN_SECRET)
     return (
       <Router>
             <Navbar className="navbar" currentUser={this.state.currentUser}/>
+
             <Route exact path="/" render={(routerProps) => {
               return <Home currentUser={this.state.currentUser} {...routerProps}/>
             }} />
+
             <Route exact path="/about" component={About} />
+
             <Route exact path="/signup" render={(routerProps) => {
 							return <Signup setCurrentUser={this.setCurrentUser} {...routerProps}/>
 						}} />

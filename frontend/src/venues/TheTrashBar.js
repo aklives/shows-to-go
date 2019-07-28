@@ -24,12 +24,12 @@ render(){
       <h1>The Trash Bar</h1>
       <p>{this.state.venue.address}</p>
       <br/>
-      <img src="./the_trash_bar.jpg" height="400px" width="800px" />
+      <img src="./the_trash_bar.jpg" height="400px" width="800px" alt="The Trash Bar" title="The Trash Bar"/>
       <p>The Trash Bar is in the heart of Williamsburg and features punk and rock acts</p>
       <h1>Bands Playing:</h1>
       {this.state.venue.address ?
        this.state.venue.concerts.map(concert => {
-         return <div className="venue-concerts"><p><span className="neon-orange">{concert.band}</span>-<span className="neon-purple">{concert.day_name.name}</span></p></div>
+         return <div className="venue-concerts" key={concert.id}><p><span className="neon-orange">{concert.band}</span>-<span className="neon-purple">{concert.day_name.name}</span></p></div>
        })
 
       :

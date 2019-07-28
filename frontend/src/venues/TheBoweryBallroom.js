@@ -24,12 +24,12 @@ render(){
       <h1>The Bowery Ballroom</h1>
       <p>{this.state.venue.address}</p>
       <br/>
-      <img src="./the_bowery_ballroom.jpg" height="400px" width="800px" />
+      <img src="./the_bowery_ballroom.jpg" height="400px" width="800px" alt="The Bowery Ballroom" title="The Bowery Ballroom" />
       <p>The Bowery Ballroom is located in the heart of the East Village on Delancey St.</p>
       <h1>Bands Playing:</h1>
       {this.state.venue.address ?
        this.state.venue.concerts.map(concert => {
-         return <div className="venue-concerts"><p><span className="neon-orange">{concert.band}</span>-<span className="neon-purple">{concert.day_name.name}</span></p></div>
+         return <div className="venue-concerts" key={concert.id}><p><span className="neon-orange">{concert.band}</span>-<span className="neon-purple">{concert.day_name.name}</span></p></div>
        })
 
       :

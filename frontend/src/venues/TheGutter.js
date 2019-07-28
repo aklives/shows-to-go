@@ -24,12 +24,12 @@ render(){
       <h1>The Gutter</h1>
       <p>{this.state.venue.address}</p>
       <br/>
-      <img src="./the_gutter.jpg" height="400px" width="800px" />
+      <img src="./the_gutter.jpg" height="400px" width="800px" alt="The Gutter" title="The Gutter" />
       <p>The Gutter is tucked away in North Williamsburg and features a bowling alley.</p>
       <h1>Bands Playing:</h1>
       {this.state.venue.address ?
        this.state.venue.concerts.map(concert => {
-         return <div className="venue-concerts"><p><span className="neon-orange">{concert.band}</span>-<span className="neon-purple">{concert.day_name.name}</span></p></div>
+         return <div className="venue-concerts" key={concert.id}><p><span className="neon-orange">{concert.band}</span>-<span className="neon-purple">{concert.day_name.name}</span></p></div>
        })
 
       :

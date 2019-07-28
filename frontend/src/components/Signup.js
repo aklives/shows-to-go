@@ -4,7 +4,6 @@ import {
   Form,
   Grid,
   Header,
-  Message,
   Segment,
 } from 'semantic-ui-react';
 
@@ -38,7 +37,9 @@ class Signup extends React.Component {
 				console.log(response)
 				alert(response.errors)
 			} else {
-				this.props.history.push('/login')
+        localStorage.setItem("token", response.token)
+				this.props.setCurrentUser(response.user)
+				this.props.history.push('/')
 			}
 
 		})

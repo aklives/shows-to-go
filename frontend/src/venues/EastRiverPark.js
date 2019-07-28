@@ -21,16 +21,16 @@ render(){
   return(
 
 
-      <React.Fragment>
+      <div className="venue-page">
         <h1>East River Park</h1>
         <p>{this.state.venue.address}</p>
         <br/>
-        <img src="./east_river_park.jpg" height="400px" width="800px" />
+        <img src="./east_river_park.jpg" height="400px" width="800px" alt="East River Park" title="East River Park"/>
         <p>This venue is located in NYC's East River Park in the Lower East Side.</p>
         <h1>Bands Playing:</h1>
         {this.state.venue.address ?
          this.state.venue.concerts.map(concert => {
-           return <div className="venue-concerts"><p><span className="neon-orange">{concert.band}</span>-<span className="neon-purple">{concert.day_name.name}</span></p></div>
+           return <div className="venue-concerts" key={concert.id}><p><span className="neon-orange">{concert.band}</span>-<span className="neon-purple">{concert.day_name.name}</span></p></div>
          })
 
         :
@@ -41,7 +41,7 @@ render(){
          :
          null
         }
-     </React.Fragment>
+     </div>
 
 
 

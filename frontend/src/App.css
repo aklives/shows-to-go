@@ -114,7 +114,7 @@ a {
   height: 100%;
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
 }
@@ -204,6 +204,15 @@ a {
 .profile-header {
   width:100%;
   height:30px;
+}
 
-
+.edit-concerts {
+  background-color: #2A3439;
+  border-style: groove;
+  border-color: #ffff33;
+  border-width: 1px;
+  width: 500px;
+  height:50px;
+  margin: 5px;
+  line-height: 50px;
 }

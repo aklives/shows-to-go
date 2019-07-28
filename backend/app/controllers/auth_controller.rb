@@ -1,17 +1,17 @@
 class AuthController < ApplicationController
   def login
     # check if my params contain the entered username and password
-    @user = User.find_by(email: params[:email])
+    user = User.find_by(email: params[:email])
 
-    if @user && @user.authenticate(params[:password])
+    if user && user.authenticate(params[:password])
 
-      @token = encode_token(@user.id)
+      token = encode_token(user.id)
 
-      render json: {user: @user, token: @token}
+      render json: {user: user, token: token}
 
       # render json: user
     else
-      render json: {errors: "You dun goofed!"}
+      render json: {errors: "Wrong email or password!"}
     end
   end
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Button } from 'semantic-ui-react'
+import {Button} from 'semantic-ui-react'
 
 class Edit extends React.Component{
 
@@ -66,9 +66,17 @@ addConcert = () => {
       day_id: this.state.day_id
     })
   })
+
   .then(res => res.json())
-  .then(res => console.log(res))
-  .then(alert("You created a concert!"))
+  .then((res) => {
+    if (res.id === null){
+      console.log(res)
+      alert("This concert already exists")
+    } else {
+      console.log(res)
+      alert("You created a concert!")
+    }
+  })
   .then(() => this.fetchConcerts())
 }
 
@@ -83,9 +91,9 @@ render(){
         <h2>See all shows:</h2>
         {this.state.concerts.length < 1 && this.props.currentUser ? this.fetchConcerts() : null}
         {this.state.concerts.map(concert => {
-          return <React.Fragment key={concert.id}>
-                   <div>
-                     <br/><span className="neon-purple">{concert.day_name.name}</span> - <span className="neon-orange"><strong>{concert.band}</strong></span> - <span className="venue-day">{concert.venue_name.name}</span>
+          return (
+                   <div className="edit-concerts" key={concert.id}>
+                     <span className="neon-purple">{concert.day_name.name}</span> - <span className="neon-orange"><strong>{concert.band}</strong></span> - <span className="venue-day">{concert.venue_name.name}</span><span> - </span>
                      {this.props.currentUser ?
                       <Button  size='mini' basic color='blue' onClick={() => this.deleteConcert(concert.id)} type='submit'>Delete</Button>
                       :
@@ -93,7 +101,7 @@ render(){
                      }
 
                    </div>
-                 </React.Fragment>
+                 )
         })}
       </div>
       :
@@ -106,9 +114,9 @@ render(){
       <select value={this.state.band} onChange={this.handleBandChange} required>
         <option value="" disabled>Band</option>
         {
-          bands.map(function(band) {
+          bands.map(function(band, idx) {
             return <option
-              value={band}>{band}</option>;
+              value={band} key={idx}>{band}</option>;
           })
         }
       </select>
